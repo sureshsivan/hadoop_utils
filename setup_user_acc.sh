@@ -5,16 +5,14 @@
 ssh -i <key_file_path> ubuntu@<ip_address>
 # Create password for root
 sudo passwd
-
-exit
-
-ssh -i <key_file_path> root@<ip_address>
+su root
 # as [root]
 mkdir /root/.ssh
 touch authorized_keys
 cat /home/ubuntu/.ssh/authorized_keys > /root/.ssh/authorized_keys
 chmod 600 /root/.ssh/authorized_keys
 exit
+
 
 ssh -i <key_file_path> root@<ip_address>
 # as [root]
