@@ -3,12 +3,8 @@
 ##################################################################################
 ssh -i <key_file_path> root@<ip_address>
 mkdir /root/tmp
-mkdir /bigdata
-mkdir /bigdata/tmp
-mkdir /bigdata/apps
-mkdir /bigdata/data
-mkdir /bigdata/conf
-mkdir /bigdata/logs
+# All Higher level directories
+mkdir /bigdata  /bigdata/tmp /bigdata/apps  /bigdata/data /bigdata/conf /bigdata/logs
 
 # Install JDK on own and skip below section
 cd /tmp
@@ -31,5 +27,8 @@ ssh -i <key_file_path> hadoop@<ip_address>:/bigdata
 ls -la  # To Check ownership
 tar -zxvf hadoop-1.2.1.tar.gz
 tar -zxvf hadoop-2.4.1.tar.gz
-
+# Create Lower Level Directories for Hadoop Eco System to run
+mkdir /bigdata/data/dfs.data  /bigdata/data/dfs.name  /bigdata/data/fs.checkpoint /bigdata/data/hadoop.tmp  
+mkdir /bigdata/data/yarn  /bigdata/data/yarn/local-dirs/log-dirs
+mkdir /bigdaya/conf.pseudo
 
