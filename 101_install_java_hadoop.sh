@@ -4,7 +4,7 @@
 ssh -i <key_file_path> root@<ip_address>
 mkdir /root/tmp
 # All Higher level directories
-mkdir /bigdata  /bigdata/tmp /bigdata/apps  /bigdata/data /bigdata/conf /bigdata/logs /bigdata/logs/mapred  /bigdata/logs/yarn
+mkdir /bigdata  /bigdata/tmp /bigdata/apps  /bigdata/data /bigdata/conf /bigdata/logs /bigdata/pid  
 
 # Install JDK on own and skip below section
 cd /tmp
@@ -31,6 +31,8 @@ tar -zxvf hadoop-2.4.1.tar.gz
 mkdir /bigdata/data/dfs.data  /bigdata/data/dfs.name  /bigdata/data/fs.checkpoint /bigdata/data/hadoop.tmp  
 mkdir /bigdata/data/yarn  /bigdata/data/yarn/local-dirs /bigdata/data/yarn/log-dirs
 mkdir /bigdata/conf.pseudo  /bigdata/conf.local /bigdata/conf.tmp
+mkdir /bigdata/logs/mapred  /bigdata/logs/yarn  /bigdata/logs/hdfs
+mkdir /bigdata/pid/mapred  /bigdata/pid/yarn  /bigdata/pid/hadoop
 
 echo "JAVA_HOME=<JAVA_HOME>"	>>	~/.bashrc
 echo "export JAVA_HOME"	>>	~/.bashrc
@@ -44,18 +46,27 @@ echo "export HADOOP_VERSION_DIR"	>>	~/.bashrc
 echo "HADOOP_PREFIX=$BIGDATA_DIR/$HADOOP_VERSION_DIR"	>>	~/.bashrc
 echo "export HADOOP_PREFIX"	>>	~/.bashrc
 
-echo "HADOOP_CONF_DIR=$BIGDATA_DIR/conf"	>>	~/.bashrc
+echo "HADOOP_CONF_DIR=$BIGDATA_DIR/conf/hadoop"	>>	~/.bashrc
 echo "export HADOOP_CONF_DIR"	>>	~/.bashrc
 
-echo "HADOOP_LOG_DIR=$BIGDATA_DIR/logs"	>>	~/.bashrc
+echo "HADOOP_LOG_DIR=$BIGDATA_DIR/logs/hadoop"	>>	~/.bashrc
 echo "export HADOOP_LOG_DIR"	>>	~/.bashrc
 
+echo "HDFS_LOG_DIR=$BIGDATA_DIR/logs/hdfs"	>>	~/.bashrc
+echo "export HDFS_LOG_DIR"	>>	~/.bashrc
 
-HDFS_LOG_DIR
-YARN_LOG_DIR
-MAPRED_LOG_DIR
+echo "YARN_LOG_DIR=$BIGDATA_DIR/logs/yarn"	>>	~/.bashrc
+echo "export YARN_LOG_DIR"	>>	~/.bashrc
 
+echo "MAPRED_LOG_DIR=$BIGDATA_DIR/logs/mapred"	>>	~/.bashrc
+echo "export MAPRED_LOG_DIR"	>>	~/.bashrc
 
-HADOOP_PID_DIR
-MAPRED_PID_DIR
-YARN_PID_DIR
+echo "HADOOP_PID_DIR=$BIGDATA_DIR/pid/hdfs"	>>	~/.bashrc
+echo "export HADOOP_PID_DIR"	>>	~/.bashrc
+
+echo "YARN_PID_DIR=$BIGDATA_DIR/pid/yarn"	>>	~/.bashrc
+echo "export YARN_PID_DIR"	>>	~/.bashrc
+
+echo "MAPRED_PID_DIR=$BIGDATA_DIR/pid/mapred"	>>	~/.bashrc
+echo "export MAPRED_PID_DIR"	>>	~/.bashrc
+
