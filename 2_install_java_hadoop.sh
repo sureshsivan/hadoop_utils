@@ -1,3 +1,6 @@
+##################################################################################
+####  First Machine
+##################################################################################
 ssh -i <key_file_path> root@<ip_address>
 mkdir /root/tmp
 mkdir /bigdata
@@ -6,22 +9,27 @@ mkdir /bigdata/apps
 mkdir /bigdata/data
 mkdir /bigdata/conf
 mkdir /bigdata/logs
-# have oracle deb in current directory
+
+# Install JDK on own and skip below section
+cd /tmp
+wget https://s3.amazonaws.com/hadoop_util_files/java/oracle-j2sdk1.6_1.6.0%2Bupdate31_amd64.deb
 dpkg -i oracle-j2sdk1.6_1.6.0+update31_amd64.deb
-# Have all tar.gz files in /bigdata/tmp/
-cp /bigdata/tmp/*.tar.gz /bigdata/apps/
+rm oracle-j2sdk1.6_1.6.0+update31_amd64.deb
+apt-get -f install  # May Required if jdk dependencies are missing
+
+# Install hadoop eco system in /bigdata/apps on own and skip below section
+cd /bigdata/apps
+wget https://s3.amazonaws.com/hadoop_util_files/hadoop_dist/hadoop_eco.tar.gz
+tar -zxvf hadoop_eco.tar.gz
+rm hadoop_eco.tar.gz
+
+
 chown -R /bigdata hadoop:hadoop
+exit
 
-# Download JDK in local
-scp -i <java_file_path> <key_file_path> hadoop@<ip_address>:/bigdata/tmp
-ssh -i <key_file_path> hadoop@<ip_address>
-cd /bigdata/tmp
-ls -la
-chmod +x *.*
-./<bin_file_name>
+ssh -i <key_file_path> hadoop@<ip_address>:/bigdata
+ls -la  # To Check ownership
+tar -zxvf hadoop-1.2.1.tar.gz
+tar -zxvf hadoop-2.4.1.tar.gz
 
 
-
-
-su root
-chown -R /bigdata hadoop:hadoop
