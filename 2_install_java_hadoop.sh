@@ -1,5 +1,5 @@
 ##################################################################################
-####  First Machine
+####  First Machine  -  NAMENODE
 ##################################################################################
 ssh -i <key_file_path> root@<ip_address>
 mkdir /root/tmp
@@ -30,5 +30,5 @@ tar -zxvf hadoop-2.4.1.tar.gz
 # Create Lower Level Directories for Hadoop Eco System to run
 mkdir /bigdata/data/dfs.data  /bigdata/data/dfs.name  /bigdata/data/fs.checkpoint /bigdata/data/hadoop.tmp  
 mkdir /bigdata/data/yarn  /bigdata/data/yarn/local-dirs /bigdata/data/yarn/log-dirs
-mkdir /bigdaya/conf.pseudo
+mkdir /bigdata/conf.pseudo  /bigdata/conf.local /bigdata/conf.tmp
 
