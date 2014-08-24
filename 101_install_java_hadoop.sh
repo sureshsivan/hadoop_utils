@@ -32,3 +32,26 @@ mkdir /bigdata/data/dfs.data  /bigdata/data/dfs.name  /bigdata/data/fs.checkpoin
 mkdir /bigdata/data/yarn  /bigdata/data/yarn/local-dirs /bigdata/data/yarn/log-dirs
 mkdir /bigdata/conf.pseudo  /bigdata/conf.local /bigdata/conf.tmp
 
+echo "JAVA_HOME=<JAVA_HOME>"	>>	~/.bashrc
+echo "export JAVA_HOME"	>>	~/.bashrc
+
+echo "BIGDATA_DIR=/bigdata"	>>	~/.bashrc
+echo "export BIGDATA_DIR"	>>	~/.bashrc
+
+echo "HADOOP_VERSION_DIR=hadoop-2.4.1"	>>	~/.bashrc
+echo "export HADOOP_VERSION_DIR"	>>	~/.bashrc
+
+echo "HADOOP_PREFIX=$BIGDATA_DIR/$HADOOP_VERSION_DIR"	>>	~/.bashrc
+echo "export HADOOP_PREFIX"	>>	~/.bashrc
+
+echo "HADOOP_CONF_DIR=$BIGDATA_DIR/conf"	>>	~/.bashrc
+echo "export HADOOP_CONF_DIR"	>>	~/.bashrc
+
+echo "HADOOP_LOG_DIR=$BIGDATA_DIR/logs"	>>	~/.bashrc
+echo "export HADOOP_LOG_DIR"	>>	~/.bashrc
+
+
+YARN_LOG_DIR
+
+
+HADOOP_MAPRED_LOG_DIR
