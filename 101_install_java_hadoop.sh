@@ -4,7 +4,7 @@
 ssh -i <key_file_path> root@<ip_address>
 mkdir /root/tmp
 # All Higher level directories
-mkdir /bigdata  /bigdata/tmp /bigdata/apps  /bigdata/data /bigdata/conf /bigdata/logs
+mkdir /bigdata  /bigdata/tmp /bigdata/apps  /bigdata/data /bigdata/conf /bigdata/logs /bigdata/logs/mapred  /bigdata/logs/yarn
 
 # Install JDK on own and skip below section
 cd /tmp
