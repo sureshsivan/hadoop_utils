@@ -2,9 +2,9 @@
 ####  First Machine  -  NAMENODE
 ##################################################################################
 ssh -i <key_file_path> root@<ip_address>
-mkdir /root/tmp
+mkdir -p /root/tmp
 # All Higher level directories
-mkdir /bigdata  /bigdata/tmp /bigdata/apps  /bigdata/data /bigdata/conf /bigdata/logs /bigdata/pid  
+mkdir -p /bigdata  /bigdata/tmp /bigdata/apps  /bigdata/data /bigdata/conf /bigdata/logs /bigdata/pid  
 
 # Install JDK on own and skip below section
 cd /tmp
@@ -27,12 +27,6 @@ ssh -i <key_file_path> hadoop@<ip_address>:/bigdata
 ls -la  # To Check ownership
 tar -zxvf hadoop-1.2.1.tar.gz
 tar -zxvf hadoop-2.4.1.tar.gz
-# Create Lower Level Directories for Hadoop Eco System to run
-mkdir /bigdata/data/dfs.data  /bigdata/data/dfs.name  /bigdata/data/fs.checkpoint /bigdata/data/hadoop.tmp  
-mkdir /bigdata/data/yarn  /bigdata/data/yarn/local-dirs /bigdata/data/yarn/log-dirs
-mkdir /bigdata/conf.pseudo  /bigdata/conf.local /bigdata/conf.tmp
-mkdir /bigdata/logs/mapred  /bigdata/logs/yarn  /bigdata/logs/hdfs
-mkdir /bigdata/pid/mapred  /bigdata/pid/yarn  /bigdata/pid/hadoop
 
 printf "\nJAVA_HOME=<JAVA_HOME>"	>>	~/.bashrc	\
 printf "\nexport JAVA_HOME"	>>	~/.bashrc	\
@@ -70,6 +64,12 @@ printf "\nexport YARN_PID_DIR"	>>	~/.bashrc	\
 printf "\nMAPRED_PID_DIR=$BIGDATA_DIR/pid/mapred"	>>	~/.bashrc	\
 printf "\nexport MAPRED_PID_DIR"	>>	~/.bashrc	;
 
-mkdir	$HADOOP_LOG_DIR $HDFS_LOG_DIR $YARN_LOG_DIR $MAPRED_LOG_DIR $HADOOP_PID_DIR $YARN_PID_DIR $MAPRED_PID_DIR
+# Create Lower Level Directories for Hadoop Eco System to run
+mkdir -p /bigdata/data/dfs.data  /bigdata/data/dfs.name  /bigdata/data/fs.checkpoint /bigdata/data/hadoop.tmp  
+mkdir -p /bigdata/data/yarn  /bigdata/data/yarn/local-dirs /bigdata/data/yarn/log-dirs
+mkdir -p /bigdata/conf.pseudo  /bigdata/conf.local /bigdata/conf.tmp
+mkdir -p /bigdata/logs/mapred  /bigdata/logs/yarn  /bigdata/logs/hdfs
+mkdir -p /bigdata/pid/mapred  /bigdata/pid/yarn  /bigdata/pid/hadoop
+mkdir	-p $HADOOP_LOG_DIR $HDFS_LOG_DIR $YARN_LOG_DIR $MAPRED_LOG_DIR $HADOOP_PID_DIR $YARN_PID_DIR $MAPRED_PID_DIR
 
 
