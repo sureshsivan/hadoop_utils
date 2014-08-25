@@ -72,4 +72,6 @@ mkdir -p /bigdata/logs/mapred  /bigdata/logs/yarn  /bigdata/logs/hdfs
 mkdir -p /bigdata/pid/mapred  /bigdata/pid/yarn  /bigdata/pid/hadoop
 mkdir	-p $HADOOP_LOG_DIR $HDFS_LOG_DIR $YARN_LOG_DIR $MAPRED_LOG_DIR $HADOOP_PID_DIR $YARN_PID_DIR $MAPRED_PID_DIR
 
+source ~/.bashrc
 
+# Copy Configurations
