@@ -80,4 +80,27 @@ wget https://s3.amazonaws.com/hadoop_util_files/hadoop_conf/conf.tar.gz
 chmod +x conf.tar.gz
 tar zxvf ~/conf.tar.gz -C ./
 rm conf.tar.gz
-chmod -R 744 *
+chmod -R 744 .
+
+#SEDing hadoop xml configs
+# core-site.xml
+    <name>fs.default.name</name>
+    <name>fs.checkpoint.dir</name>
+# hdfs-site.xml
+    <name>dfs.name.dir</name>
+    <name>dfs.data.dir</name>
+    <name>dfs.http.address</name>
+    <name>dfs.secondary.http.address</name>
+    <name>dfs.https.address</name>
+    
+# mapred-site.xml
+    <name>mapreduce.jobhistory.address</name>
+    <name>mapreduce.jobhistory.webapp.address</name>
+    
+# yarn-site.xml
+    <name>yarn.nodemanager.local-dirs</name>
+    <name>yarn.resourcemanager.resource-tracker.address</name>
+    <name>yarn.resourcemanager.scheduler.address</name>
+    <name>yarn.resourcemanager.address</name>
+    <name>yarn.resourcemanager.admin.address</name>
+    <name>yarn.nodemanager.log-dirs</name>
