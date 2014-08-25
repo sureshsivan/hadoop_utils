@@ -34,39 +34,42 @@ mkdir /bigdata/conf.pseudo  /bigdata/conf.local /bigdata/conf.tmp
 mkdir /bigdata/logs/mapred  /bigdata/logs/yarn  /bigdata/logs/hdfs
 mkdir /bigdata/pid/mapred  /bigdata/pid/yarn  /bigdata/pid/hadoop
 
-echo "JAVA_HOME=<JAVA_HOME>"	>>	~/.bashrc
-echo "export JAVA_HOME"	>>	~/.bashrc
+printf "\nJAVA_HOME=<JAVA_HOME>"	>>	~/.bashrc	\
+printf "\nexport JAVA_HOME"	>>	~/.bashrc	\
+\
+printf "\nBIGDATA_DIR=/bigdata"	>>	~/.bashrc	\
+printf "\nexport BIGDATA_DIR"	>>	~/.bashrc	\
+\
+printf "\nHADOOP_VERSION_DIR=hadoop-2.4.1"	>>	~/.bashrc	\
+printf "\nexport HADOOP_VERSION_DIR"	>>	~/.bashrc	\
+\
+printf "\nHADOOP_PREFIX=$BIGDATA_DIR/$HADOOP_VERSION_DIR"	>>	~/.bashrc	\
+printf "\nexport HADOOP_PREFIX"	>>	~/.bashrc	\
+\
+printf "\nHADOOP_CONF_DIR=$BIGDATA_DIR/conf/hadoop"	>>	~/.bashrc	\
+printf "\nexport HADOOP_CONF_DIR"	>>	~/.bashrc	\
+\
+printf "\nHADOOP_LOG_DIR=$BIGDATA_DIR/logs/hadoop"	>>	~/.bashrc	\
+printf "\nexport HADOOP_LOG_DIR"	>>	~/.bashrc	\
+\
+printf "\nHDFS_LOG_DIR=$BIGDATA_DIR/logs/hdfs"	>>	~/.bashrc	\
+printf "\nexport HDFS_LOG_DIR"	>>	~/.bashrc	\
+\
+printf "\nYARN_LOG_DIR=$BIGDATA_DIR/logs/yarn"	>>	~/.bashrc	\
+printf "\nexport YARN_LOG_DIR"	>>	~/.bashrc	\
+\
+printf "\nMAPRED_LOG_DIR=$BIGDATA_DIR/logs/mapred"	>>	~/.bashrc	\
+printf "\nexport MAPRED_LOG_DIR"	>>	~/.bashrc	\
+\
+printf "\nHADOOP_PID_DIR=$BIGDATA_DIR/pid/hdfs"	>>	~/.bashrc	\
+printf "\nexport HADOOP_PID_DIR"	>>	~/.bashrc	\
+\
+printf "\nYARN_PID_DIR=$BIGDATA_DIR/pid/yarn"	>>	~/.bashrc	\
+printf "\nexport YARN_PID_DIR"	>>	~/.bashrc	\
+\
+printf "\nMAPRED_PID_DIR=$BIGDATA_DIR/pid/mapred"	>>	~/.bashrc	\
+printf "\nexport MAPRED_PID_DIR"	>>	~/.bashrc	;
 
-echo "BIGDATA_DIR=/bigdata"	>>	~/.bashrc
-echo "export BIGDATA_DIR"	>>	~/.bashrc
+mkdir	$HADOOP_LOG_DIR $HDFS_LOG_DIR $YARN_LOG_DIR $MAPRED_LOG_DIR $HADOOP_PID_DIR $YARN_PID_DIR $MAPRED_PID_DIR
 
-echo "HADOOP_VERSION_DIR=hadoop-2.4.1"	>>	~/.bashrc
-echo "export HADOOP_VERSION_DIR"	>>	~/.bashrc
-
-echo "HADOOP_PREFIX=$BIGDATA_DIR/$HADOOP_VERSION_DIR"	>>	~/.bashrc
-echo "export HADOOP_PREFIX"	>>	~/.bashrc
-
-echo "HADOOP_CONF_DIR=$BIGDATA_DIR/conf/hadoop"	>>	~/.bashrc
-echo "export HADOOP_CONF_DIR"	>>	~/.bashrc
-
-echo "HADOOP_LOG_DIR=$BIGDATA_DIR/logs/hadoop"	>>	~/.bashrc
-echo "export HADOOP_LOG_DIR"	>>	~/.bashrc
-
-echo "HDFS_LOG_DIR=$BIGDATA_DIR/logs/hdfs"	>>	~/.bashrc
-echo "export HDFS_LOG_DIR"	>>	~/.bashrc
-
-echo "YARN_LOG_DIR=$BIGDATA_DIR/logs/yarn"	>>	~/.bashrc
-echo "export YARN_LOG_DIR"	>>	~/.bashrc
-
-echo "MAPRED_LOG_DIR=$BIGDATA_DIR/logs/mapred"	>>	~/.bashrc
-echo "export MAPRED_LOG_DIR"	>>	~/.bashrc
-
-echo "HADOOP_PID_DIR=$BIGDATA_DIR/pid/hdfs"	>>	~/.bashrc
-echo "export HADOOP_PID_DIR"	>>	~/.bashrc
-
-echo "YARN_PID_DIR=$BIGDATA_DIR/pid/yarn"	>>	~/.bashrc
-echo "export YARN_PID_DIR"	>>	~/.bashrc
-
-echo "MAPRED_PID_DIR=$BIGDATA_DIR/pid/mapred"	>>	~/.bashrc
-echo "export MAPRED_PID_DIR"	>>	~/.bashrc
 
