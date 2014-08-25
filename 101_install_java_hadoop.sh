@@ -74,4 +74,10 @@ mkdir	-p $HADOOP_LOG_DIR $HDFS_LOG_DIR $YARN_LOG_DIR $MAPRED_LOG_DIR $HADOOP_PID
 
 source ~/.bashrc
 
-# Copy Configurations
+# Get Configurations
+cd $HADOOP_CONF_DIR
+wget https://s3.amazonaws.com/hadoop_util_files/hadoop_conf/conf.tar.gz
+chmod +x conf.tar.gz
+tar zxvf ~/conf.tar.gz -C ./
+rm conf.tar.gz
+chmod -R 744 *
