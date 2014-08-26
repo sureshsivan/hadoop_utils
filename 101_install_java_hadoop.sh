@@ -84,9 +84,14 @@ chmod -R 744 .
 
 #SEDing hadoop xml configs
 # core-site.xml
-    <name>fs.default.name</name>
-    <name>fs.checkpoint.dir</name>
+#   <name>fs.default.name</name>
+sed -i '/fs.default.name/{n;s/.*/\t<value>hdfs:\/\/localhost:8020<\/value>/;}' core-site.xml
+#   <name>fs.checkpoint.dir</name>
+sed -i '/fs.checkpoint.dir/{n;s/.*/\t<value>\/bigdata\/data\/fs.checkpoint<\/value>/;}' core-site.xml
+
+
 # hdfs-site.xml
+
     <name>dfs.name.dir</name>
     <name>dfs.data.dir</name>
     <name>dfs.http.address</name>
