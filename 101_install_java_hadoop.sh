@@ -84,20 +84,25 @@ chmod -R 744 .
 
 #SEDing hadoop xml configs
 # core-site.xml
-#   <name>fs.default.name</name>
+#   fs.default.name
 sed -i '/fs.default.name/{n;s/.*/\t<value>hdfs:\/\/localhost:8020<\/value>/;}' core-site.xml
-#   <name>fs.checkpoint.dir</name>
+#   fs.checkpoint.dir
 sed -i '/fs.checkpoint.dir/{n;s/.*/\t<value>\/bigdata\/data\/fs.checkpoint<\/value>/;}' core-site.xml
+#   hadoop.tmp.dir
+sed -i '/hadoop.tmp.dir/{n;s/.*/\t<value>\/bigdata\/data\/hadoop.tmp<\/value>/;}' core-site.xml
 
 # hdfs-site.xml
 #   dfs.name.dir
+sed -i '/dfs.name.dir/{n;s/.*/\t<value>\/bigdata\/data\/dfs.name<\/value>/;}' hdfs-site.xml
 #   dfs.data.dir
-#   dfs.name.dir
-#   dfs.data.dir
+sed -i '/dfs.data.dir/{n;s/.*/\t<value>\/bigdata\/data\/dfs.data<\/value>/;}' hdfs-site.xml
 #   dfs.http.address
+sed -i '/dfs.http.address/{n;s/.*/\t<value>localhost:50070<\/value>/;}' hdfs-site.xml
 #   dfs.secondary.http.address
+sed -i '/dfs.secondary.http.address/{n;s/.*/\t<value>localhost:50090<\/value>/;}' hdfs-site.xml
 #   dfs.https.address
-    
+sed -i '/dfs.https.address/{n;s/.*/\t<value>localhost:50470<\/value>/;}' hdfs-site.xml
+
 # mapred-site.xml
 #   mapreduce.jobhistory.address
 #   mapreduce.jobhistory.webapp.address
