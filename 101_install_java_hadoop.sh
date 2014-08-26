@@ -64,6 +64,8 @@ printf "\nexport YARN_PID_DIR"	>>	~/.bashrc	\
 printf "\nMAPRED_PID_DIR=$BIGDATA_DIR/pid/mapred"	>>	~/.bashrc	\
 printf "\nexport MAPRED_PID_DIR"	>>	~/.bashrc	;
 
+source ~/.bashrc;
+
 # Create Lower Level Directories for Hadoop Eco System to run
 mkdir -p /bigdata/data/dfs.data  /bigdata/data/dfs.name  /bigdata/data/fs.checkpoint /bigdata/data/hadoop.tmp  
 mkdir -p /bigdata/data/yarn  /bigdata/data/yarn/local-dirs /bigdata/data/yarn/log-dirs
@@ -71,8 +73,6 @@ mkdir -p /bigdata/conf.pseudo  /bigdata/conf.local /bigdata/conf.tmp
 mkdir -p /bigdata/logs/mapred  /bigdata/logs/yarn  /bigdata/logs/hdfs
 mkdir -p /bigdata/pid/mapred  /bigdata/pid/yarn  /bigdata/pid/hadoop
 mkdir -p $HADOOP_LOG_DIR $HDFS_LOG_DIR $YARN_LOG_DIR $MAPRED_LOG_DIR $HADOOP_PID_DIR $YARN_PID_DIR $MAPRED_PID_DIR
-
-source ~/.bashrc
 
 # Get Configurations
 cd $HADOOP_CONF_DIR
