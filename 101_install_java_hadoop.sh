@@ -117,3 +117,24 @@ sed -i 'mapreduce.jobhistory.webapp.address/{n;s/.*/\t<value>master2:19888<\/val
 #   yarn.resourcemanager.address
 #   yarn.resourcemanager.admin.address
 #   yarn.nodemanager.log-dirs
+
+
+  <property>
+    <name>yarn.resourcemanager.resource-tracker.address</name>
+    <value>TODO-RMNODE-HOSTNAME:8025</value>
+  </property>
+
+  <property>
+    <name>yarn.resourcemanager.scheduler.address</name>
+    <value>TODO-RMNODE-HOSTNAME:8030</value>
+  </property>
+  
+  <property>
+    <name>yarn.resourcemanager.address</name>
+    <value>TODO-RMNODE-HOSTNAME:8050</value>
+  </property>
+
+	<property>
+    <name>yarn.resourcemanager.admin.address</name>
+    <value>TODO-RMNODE-HOSTNAME:8141</value>
+	</property>
