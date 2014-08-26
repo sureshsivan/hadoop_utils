@@ -89,23 +89,23 @@ sed -i '/fs.default.name/{n;s/.*/\t<value>hdfs:\/\/localhost:8020<\/value>/;}' c
 #   <name>fs.checkpoint.dir</name>
 sed -i '/fs.checkpoint.dir/{n;s/.*/\t<value>\/bigdata\/data\/fs.checkpoint<\/value>/;}' core-site.xml
 
-
 # hdfs-site.xml
-
-    <name>dfs.name.dir</name>
-    <name>dfs.data.dir</name>
-    <name>dfs.http.address</name>
-    <name>dfs.secondary.http.address</name>
-    <name>dfs.https.address</name>
+#   dfs.name.dir
+#   dfs.data.dir
+#   dfs.name.dir
+#   dfs.data.dir
+#   dfs.http.address
+#   dfs.secondary.http.address
+#   dfs.https.address
     
 # mapred-site.xml
-    <name>mapreduce.jobhistory.address</name>
-    <name>mapreduce.jobhistory.webapp.address</name>
+#   mapreduce.jobhistory.address
+#   mapreduce.jobhistory.webapp.address
     
 # yarn-site.xml
-    <name>yarn.nodemanager.local-dirs</name>
-    <name>yarn.resourcemanager.resource-tracker.address</name>
-    <name>yarn.resourcemanager.scheduler.address</name>
-    <name>yarn.resourcemanager.address</name>
-    <name>yarn.resourcemanager.admin.address</name>
-    <name>yarn.nodemanager.log-dirs</name>
+#   yarn.nodemanager.local-dirs
+#   yarn.resourcemanager.resource-tracker.address
+#   yarn.resourcemanager.scheduler.address
+#   yarn.resourcemanager.address
+#   yarn.resourcemanager.admin.address
+#   yarn.nodemanager.log-dirs
