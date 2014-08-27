@@ -123,24 +123,3 @@ sed -i 'yarn.resourcemanager.address/{n;s/.*/\t<value>master2:8050<\/value>/;}' 
 sed -i 'yarn.resourcemanager.admin.address/{n;s/.*/\t<value>master2:8141<\/value>/;}' yarn-site.xml
 #   yarn.nodemanager.log-dirs
 sed -i 'yarn.nodemanager.log-dirs/{n;s/.*/\t<value>\/bigdata\/data\/yarn\/log-dirs<\/value>/;}' yarn-site.xml
-
-
-  <property>
-    <name>yarn.resourcemanager.resource-tracker.address</name>
-    <value>TODO-RMNODE-HOSTNAME:8025</value>
-  </property>
-
-  <property>
-    <name>yarn.resourcemanager.scheduler.address</name>
-    <value>TODO-RMNODE-HOSTNAME:8030</value>
-  </property>
-  
-  <property>
-    <name>yarn.resourcemanager.address</name>
-    <value>TODO-RMNODE-HOSTNAME:8050</value>
-  </property>
-
-	<property>
-    <name>yarn.resourcemanager.admin.address</name>
-    <value>TODO-RMNODE-HOSTNAME:8141</value>
-	</property>
