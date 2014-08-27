@@ -112,11 +112,17 @@ sed -i 'mapreduce.jobhistory.webapp.address/{n;s/.*/\t<value>master2:19888<\/val
     
 # yarn-site.xml
 #   yarn.nodemanager.local-dirs
+sed -i 'yarn.nodemanager.local-dirs/{n;s/.*/\t<value>\/bigdata\/data\/yarn\/local-dirs<\/value>/;}' yarn-site.xml
 #   yarn.resourcemanager.resource-tracker.address
+sed -i 'yarn.resourcemanager.resource-tracker.address/{n;s/.*/\t<value>master2:8025<\/value>/;}' yarn-site.xml
 #   yarn.resourcemanager.scheduler.address
+sed -i 'yarn.resourcemanager.scheduler.address/{n;s/.*/\t<value>master2:8030<\/value>/;}' yarn-site.xml
 #   yarn.resourcemanager.address
+sed -i 'yarn.resourcemanager.address/{n;s/.*/\t<value>master2:8050<\/value>/;}' yarn-site.xml
 #   yarn.resourcemanager.admin.address
+sed -i 'yarn.resourcemanager.admin.address/{n;s/.*/\t<value>master2:8141<\/value>/;}' yarn-site.xml
 #   yarn.nodemanager.log-dirs
+sed -i 'yarn.nodemanager.log-dirs/{n;s/.*/\t<value>\/bigdata\/data\/yarn\/log-dirs<\/value>/;}' yarn-site.xml
 
 
   <property>
