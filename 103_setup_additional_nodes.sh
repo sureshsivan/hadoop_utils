@@ -40,3 +40,4 @@ grep -q "^slave3" /etc/hosts && sed "s/^slave3=.*/slave1 <slave_3_ip>/" -i file 
 
 
 bin/hadoop-daemon.sh start [namenode | secondarynamenode | datanode | jobtracker | tasktracker]
+rsync -avz -e "ssh -p1234  -i $HOME/.ssh/*.pem" "$HADOOP_CONF_DIR" "hadoop@master2:$HADOOP_CONF_DIR"
