@@ -3,12 +3,12 @@
 ## For any other nodes, same configurations can be copied - rsync-ed
 #########################################################################################
 # Get Configurations
-cd $HADOOP_CONF_DIR
-wget https://s3.amazonaws.com/hadoop_util_files/hadoop_conf/conf.tar.gz
-chmod +x conf.tar.gz
-tar zxvf ./conf.tar.gz -C ./
-rm conf.tar.gz
-chmod -R 744 .
+cd $HADOOP_CONF_DIR;
+wget https://s3.amazonaws.com/hadoop_util_files/hadoop_conf/conf.tar.gz;
+chmod +x conf.tar.gz;   \
+tar zxvf ./conf.tar.gz -C ./;   \
+rm conf.tar.gz; \
+chmod -R 744 .; 
 
 ##!! Ensure that line next to property name is actually value node
 ##!! If there are any comments in between - this command will add will hold duplicate value node
@@ -16,13 +16,13 @@ chmod -R 744 .
 #SEDing hadoop xml configs
 # core-site.xml
 #   fs.default.name
-sed -i '/<name>fs.default.name<\/name>/{n;s/.*/\t<value>hdfs:\/\/master1:8020<\/value>/;}' core-site.xml
-#   fs.checkpoint.dir
-sed -i '/<name>fs.checkpoint.dir<\/name>/{n;s/.*/\t<value>\/bigdata\/data\/fs.checkpoint<\/value>/;}' core-site.xml
-#   hadoop.tmp.dir
-sed -i '/<name>hadoop.tmp.dir<\/name>/{n;s/.*/\t<value>\/bigdata\/data\/hadoop.tmp<\/value>/;}' core-site.xml
-#   fs.checkpoint.edits.dir
-sed -i '/<name>fs.checkpoint.edits.dir<\/name>/{n;s/.*/\t<value>\/bigdata\/data\/fs.checkpoint<\/value>/;}' core-site.xml
+sed -i '/<name>fs.default.name<\/name>/{n;s/.*/\t<value>hdfs:\/\/master1:8020<\/value>/;}' core-site.xml;   
+#   fs.checkpoint.dir   \
+sed -i '/<name>fs.checkpoint.dir<\/name>/{n;s/.*/\t<value>\/bigdata\/data\/fs.checkpoint<\/value>/;}' core-site.xml;        
+#   hadoop.tmp.dir  \
+sed -i '/<name>hadoop.tmp.dir<\/name>/{n;s/.*/\t<value>\/bigdata\/data\/hadoop.tmp<\/value>/;}' core-site.xml;  
+#   fs.checkpoint.edits.dir \
+sed -i '/<name>fs.checkpoint.edits.dir<\/name>/{n;s/.*/\t<value>\/bigdata\/data\/fs.checkpoint<\/value>/;}' core-site.xml;
 
 # hdfs-site.xml
 #   dfs.name.dir
