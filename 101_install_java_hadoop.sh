@@ -33,7 +33,7 @@ printf '\nexport JAVA_HOME'	>>	~/.bashrc;	\
 printf '\nBIGDATA_DIR=/bigdata'	>>	~/.bashrc;	\
 printf '\nexport BIGDATA_DIR'	>>	~/.bashrc;	\
 printf '\nHADOOP_VERSION_DIR=hadoop-2.4.1'	>>	~/.bashrc;	\
-printf '\nexport HADOOP_VERSION_DIR\n'	>>	~/.bashrc;  \
+printf '\nexport HADOOP_VERSION_DIR'	>>	~/.bashrc;  \
 printf '\nHADOOP_PREFIX=$BIGDATA_DIR/apps/$HADOOP_VERSION_DIR'	>>	~/.bashrc;	\
 printf '\nexport HADOOP_PREFIX'	>>	~/.bashrc;	\
 printf '\nHADOOP_CONF_DIR=$BIGDATA_DIR/conf/hadoop'	>>	~/.bashrc;	\
