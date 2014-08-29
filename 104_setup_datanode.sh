@@ -24,5 +24,6 @@ ssh -i <key_file_path> hadoop@<sec_namenode_host_name>
 su root
 grep -q '<namenode_host_name>' /etc/hosts && sed -i "/<namenode_host_name>/c\<namenode_ip>\t<sec_namenode_host_name>/" /etc/hosts || echo -e '<namenode_ip>\t<namenode_host_name>' >> /etc/hosts
 grep -q '<sec_namenode_host_name>' /etc/hosts && sed -i "/<sec_namenode_host_name>/c\<sec_namenode_ip>\t<sec_namenode_host_name>/" /etc/hosts || echo -e '<sec_namenode_ip>\t<sec_namenode_host_name>' >> /etc/hosts
+grep -q '<datanode_host_name>' /etc/hosts && sed -i "/<datanode_host_name>/c\<datanode_ip>\t<datanode_host_name>/" /etc/hosts || echo -e '<sec_namenode_ip>\t<datanode_host_name>' >> /etc/hosts
 
 
