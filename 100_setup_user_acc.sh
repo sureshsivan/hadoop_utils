@@ -32,7 +32,7 @@ exit
 
 
 
-scp -i <key_file_path> <key_file_path> hadoop@master1:/home/hadoop/.ssh/
+scp -i <key_file_path> <key_file_path> hadoop@<host_name>:/home/hadoop/.ssh/
 ssh -i <key_file_path> hadoop@<ip_address>
 touch ~/.ssh/config
 chmod 600 ~/.ssh/config
