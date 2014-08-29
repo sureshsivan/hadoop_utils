@@ -1,7 +1,7 @@
 ###########################################################################################
 # Script for setting up additional nodes apart from main node
 ###########################################################################################
-# Assumption is Hadoo is already configured ans setup.
+# Assumption is Hadoop is already configured ans setup.
 
 # To add secondary namenode configuration in conf/master
 cat master2 > $HADOOP_CONF_DIR/masters
