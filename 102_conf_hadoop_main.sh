@@ -57,3 +57,7 @@ sed -i '/<name>yarn.resourcemanager.address<\/name>/{n;s/.*/\t<value>master2:805
 sed -i '/<name>yarn.resourcemanager.admin.address<\/name>/{n;s/.*/\t<value>master2:8141<\/value>/;}' yarn-site.xml
 #   yarn.nodemanager.log-dirs
 sed -i '/<name>yarn.nodemanager.log-dirs<\/name>/{n;s/.*/\t<value>\/bigdata\/data\/yarn\/log-dirs<\/value>/;}' yarn-site.xml
+
+#   Login as root
+su root
+echo 'master1' > /etc/hostname
