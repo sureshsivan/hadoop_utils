@@ -7,7 +7,7 @@ ssh -i <key_file_path> ubuntu@<ip_address>
 sudo passwd
 su root
 # as [root]
-echo '<machine_name>' > /etc/hostname
+echo "<host_name>" > /etc/hostname
 
 mkdir /root/.ssh
 touch authorized_keys
@@ -31,13 +31,29 @@ ls -la /home/hadoop/.ssh
 exit
 
 
-# From Client
+
+scp -i <key_file_path> <key_file_path> hadoop@master1:/home/hadoop/.ssh/
 ssh -i <key_file_path> hadoop@<ip_address>
-ls -la /home/hadoop/.ssh
-chmod 600 /home/hadoop/.ssh/authorized_keys
-ls -la /home/hadoop/.ssh
-ssh-keygen
-cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
-ssh hadoop@localhost
-exit
-exit
+touch ~/.ssh/config
+chmod 600 ~/.ssh/config
+echo "Host localhost" > ~/.ssh/config
+echo "IdentityFile ~/.ssh/<key_file_name>" >> ~/.ssh/config
+echo "Host <host_name>" >> ~/.ssh/config
+echo "IdentityFile ~/.ssh/<key_file_name>" >> ~/.ssh/config
+
+ssh localhost
+ssh <host_name>
+
+# From Client
+#ssh -i <key_file_path> hadoop@<ip_address>
+#ls -la /home/hadoop/.ssh
+#chmod 600 /home/hadoop/.ssh/authorized_keys
+#ls -la /home/hadoop/.ssh
+#ssh-keygen
+#cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
+#ssh hadoop@localhost
+#exit
+#exit
+
+
+
