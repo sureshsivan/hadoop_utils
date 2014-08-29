@@ -10,8 +10,8 @@ mkdir -p /bigdata  /bigdata/tmp /bigdata/apps  /bigdata/data /bigdata/conf /bigd
 cd /tmp
 wget https://s3.amazonaws.com/hadoop_util_files/java/oracle-j2sdk1.6_1.6.0%2Bupdate31_amd64.deb
 dpkg -i oracle-j2sdk1.6_1.6.0+update31_amd64.deb
+apt-get -f install  # May Required if jdk dependencies are missing - Ubuntu Based
 rm oracle-j2sdk1.6_1.6.0+update31_amd64.deb
-apt-get -f install  # May Required if jdk dependencies are missing
 
 # Install hadoop eco system in /bigdata/apps on own and skip below section
 cd /bigdata/apps
@@ -24,9 +24,10 @@ chown -R hadoop:hadoop /bigdata
 exit
 
 ssh -i <key_file_path> hadoop@<ip_address>:/bigdata
+cd /bigdata/apps
 ls -la  # To Check ownership
-tar -zxvf hadoop-1.2.1.tar.gz
-tar -zxvf hadoop-2.4.1.tar.gz
+tar -zxf hadoop-1.2.1.tar.gz
+tar -zxf hadoop-2.4.1.tar.gz
 
 printf '\nJAVA_HOME=/usr/lib/jvm/j2sdk1.6-oracle/'	>>	~/.bashrc;	\
 printf '\nexport JAVA_HOME'	>>	~/.bashrc;	\
@@ -56,10 +57,9 @@ printf '\nexport MAPRED_PID_DIR\n'	>>	~/.bashrc;
 source ~/.bashrc;
 
 # Create Lower Level Directories for Hadoop Eco System to run
-mkdir -p /bigdata/data/dfs.data  /bigdata/data/dfs.name  /bigdata/data/fs.checkpoint /bigdata/data/hadoop.tmp  
+mkdir -p /bigdata/data/dfs.data  /bigdata/data/dfs.name  /bigdata/data/fs.checkpoint /bigdata/data/hadoop.tmp
 mkdir -p /bigdata/data/yarn  /bigdata/data/yarn/local-dirs /bigdata/data/yarn/log-dirs
 mkdir -p /bigdata/conf.pseudo  /bigdata/conf.local /bigdata/conf.tmp
 mkdir -p /bigdata/logs/mapred  /bigdata/logs/yarn  /bigdata/logs/hdfs
 mkdir -p /bigdata/pid/mapred  /bigdata/pid/yarn  /bigdata/pid/hadoop
 mkdir -p $HADOOP_LOG_DIR $HDFS_LOG_DIR $YARN_LOG_DIR $MAPRED_LOG_DIR $HADOOP_PID_DIR $YARN_PID_DIR $MAPRED_PID_DIR $HADOOP_CONF_DIR
-
