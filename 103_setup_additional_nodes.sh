@@ -55,3 +55,6 @@ ssh-copy-id ~/.ssh/id_rsa.pub hadoop@master2
 
 bin/hadoop-daemon.sh start [namenode | secondarynamenode | datanode | jobtracker | tasktracker]
 rsync -avz -e "ssh -p1234  -i $HOME/.ssh/*.pem" "$HADOOP_CONF_DIR" "hadoop@master2:$HADOOP_CONF_DIR"
+
+# Allow client to connect to all nodes of Hadoop directly(without password through user hadoop).
+
