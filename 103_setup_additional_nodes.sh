@@ -42,9 +42,9 @@ cat master1 > /etc/hostname
 
 # Password less login from namenode to secondarynamenode
 ssh -i <key_file_path> hadoop@master1
-ssh-copy-id ~/.ssh/id_rsa.pub hadoop@master2
+ssh-copy-id -i ~/.ssh/id_rsa.pub hadoop@master2
 # rsync conf from namenode to secondary namenode
-
+rsync -avz -e "ssh -i $HOME/.ssh/<key_file>" "$HADOOP_CONF_DIR" "hadoop@master2:$HADOOP_CONF_DIR"
 
 ###########################################################################################
 # data Nodes  / Yarn Task Nodes
