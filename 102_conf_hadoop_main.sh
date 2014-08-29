@@ -10,6 +10,9 @@ tar zxvf ./conf.tar.gz -C ./
 rm conf.tar.gz
 chmod -R 744 .
 
+##!! Ensure that line next to property name is actually value node
+##!! If there are any comments in between - this command will add will hold duplicate value node
+
 #SEDing hadoop xml configs
 # core-site.xml
 #   fs.default.name
