@@ -20,7 +20,7 @@ tar -zxvf hadoop_eco.tar.gz
 rm hadoop_eco.tar.gz
 
 
-chown -R /bigdata hadoop:hadoop
+chown -R hadoop:hadoop /bigdata
 exit
 
 ssh -i <key_file_path> hadoop@<ip_address>:/bigdata
@@ -28,41 +28,30 @@ ls -la  # To Check ownership
 tar -zxvf hadoop-1.2.1.tar.gz
 tar -zxvf hadoop-2.4.1.tar.gz
 
-printf "\nJAVA_HOME=<JAVA_HOME>"	>>	~/.bashrc	\
-printf "\nexport JAVA_HOME"	>>	~/.bashrc	\
-\
-printf "\nBIGDATA_DIR=/bigdata"	>>	~/.bashrc	\
-printf "\nexport BIGDATA_DIR"	>>	~/.bashrc	\
-\
-printf "\nHADOOP_VERSION_DIR=hadoop-2.4.1"	>>	~/.bashrc	\
-printf "\nexport HADOOP_VERSION_DIR"	>>	~/.bashrc	\
-\
-printf "\nHADOOP_PREFIX=$BIGDATA_DIR/$HADOOP_VERSION_DIR"	>>	~/.bashrc	\
-printf "\nexport HADOOP_PREFIX"	>>	~/.bashrc	\
-\
-printf "\nHADOOP_CONF_DIR=$BIGDATA_DIR/conf/hadoop"	>>	~/.bashrc	\
-printf "\nexport HADOOP_CONF_DIR"	>>	~/.bashrc	\
-\
-printf "\nHADOOP_LOG_DIR=$BIGDATA_DIR/logs/hadoop"	>>	~/.bashrc	\
-printf "\nexport HADOOP_LOG_DIR"	>>	~/.bashrc	\
-\
-printf "\nHDFS_LOG_DIR=$BIGDATA_DIR/logs/hdfs"	>>	~/.bashrc	\
-printf "\nexport HDFS_LOG_DIR"	>>	~/.bashrc	\
-\
-printf "\nYARN_LOG_DIR=$BIGDATA_DIR/logs/yarn"	>>	~/.bashrc	\
-printf "\nexport YARN_LOG_DIR"	>>	~/.bashrc	\
-\
-printf "\nMAPRED_LOG_DIR=$BIGDATA_DIR/logs/mapred"	>>	~/.bashrc	\
-printf "\nexport MAPRED_LOG_DIR"	>>	~/.bashrc	\
-\
-printf "\nHADOOP_PID_DIR=$BIGDATA_DIR/pid/hdfs"	>>	~/.bashrc	\
-printf "\nexport HADOOP_PID_DIR"	>>	~/.bashrc	\
-\
-printf "\nYARN_PID_DIR=$BIGDATA_DIR/pid/yarn"	>>	~/.bashrc	\
-printf "\nexport YARN_PID_DIR"	>>	~/.bashrc	\
-\
-printf "\nMAPRED_PID_DIR=$BIGDATA_DIR/pid/mapred"	>>	~/.bashrc	\
-printf "\nexport MAPRED_PID_DIR"	>>	~/.bashrc	;
+printf '\nJAVA_HOME=/usr/lib/jvm/j2sdk1.6-oracle/'	>>	~/.bashrc;	\
+printf '\nexport JAVA_HOME'	>>	~/.bashrc;	\
+printf '\nBIGDATA_DIR=/bigdata'	>>	~/.bashrc;	\
+printf '\nexport BIGDATA_DIR'	>>	~/.bashrc;	\
+printf '\nHADOOP_VERSION_DIR=hadoop-2.4.1'	>>	~/.bashrc;	\
+printf '\nexport HADOOP_VERSION_DIR\n'	>>	~/.bashrc;  \
+printf '\nHADOOP_PREFIX=$BIGDATA_DIR/apps/$HADOOP_VERSION_DIR'	>>	~/.bashrc;	\
+printf '\nexport HADOOP_PREFIX'	>>	~/.bashrc;	\
+printf '\nHADOOP_CONF_DIR=$BIGDATA_DIR/conf/hadoop'	>>	~/.bashrc;	\
+printf '\nexport HADOOP_CONF_DIR'	>>	~/.bashrc;	\
+printf '\nHADOOP_LOG_DIR=$BIGDATA_DIR/logs/hadoop'	>>	~/.bashrc;	\
+printf '\nexport HADOOP_LOG_DIR'	>>	~/.bashrc;	\
+printf '\nHDFS_LOG_DIR=$BIGDATA_DIR/logs/hdfs'	>>	~/.bashrc;	\
+printf '\nexport HDFS_LOG_DIR'	>>	~/.bashrc;	\
+printf '\nYARN_LOG_DIR=$BIGDATA_DIR/logs/yarn'	>>	~/.bashrc;	\
+printf '\nexport YARN_LOG_DIR'	>>	~/.bashrc;	\
+printf '\nMAPRED_LOG_DIR=$BIGDATA_DIR/logs/mapred'	>>	~/.bashrc;	\
+printf '\nexport MAPRED_LOG_DIR'	>>	~/.bashrc;	\
+printf '\nHADOOP_PID_DIR=$BIGDATA_DIR/pid/hdfs'	>>	~/.bashrc;	\
+printf '\nexport HADOOP_PID_DIR'	>>	~/.bashrc;	\
+printf '\nYARN_PID_DIR=$BIGDATA_DIR/pid/yarn'	>>	~/.bashrc;	\
+printf '\nexport YARN_PID_DIR'	>>	~/.bashrc;	\
+printf '\nMAPRED_PID_DIR=$BIGDATA_DIR/pid/mapred'	>>	~/.bashrc;	\
+printf '\nexport MAPRED_PID_DIR\n'	>>	~/.bashrc;
 
 source ~/.bashrc;
 
