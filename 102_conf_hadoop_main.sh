@@ -8,6 +8,7 @@ wget https://s3.amazonaws.com/hadoop_util_files/hadoop_conf/conf.tar.gz;
 chmod +x conf.tar.gz;   \
 tar zxvf ./conf.tar.gz -C ./;   \
 rm conf.tar.gz; \
+touch $HADOOP_CONF_DIR/masters; \
 chmod -R 744 .; 
 
 ##!! Ensure that line next to property name is actually value node
