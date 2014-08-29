@@ -3,6 +3,9 @@
 # Script for setting up additional nodes apart from main node
 ###########################################################################################
 ###########################################################################################
+##  master1 - namenode
+##  master2 - secondarynamenode
+##  slaves[1-4] - datanodes
 
 ###########################################################################################
 # Script for setting up additional nodes apart from main node
@@ -38,7 +41,8 @@ grep -q "^slave3" /etc/hosts && sed "s/^slave3=.*/slave1 <slave_3_ip>/" -i /etc/
 cat master1 > /etc/hostname
 
 # Password less login from namenode to secondarynamenode
-
+ssh -i <key_file_path> hadoop@master1
+ssh-copy-id ~/.ssh/id_rsa.pub hadoop@master2
 # rsync conf from namenode to secondary namenode
 
 
