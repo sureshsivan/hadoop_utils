@@ -8,6 +8,7 @@ sudo passwd
 su root
 # as [root]
 echo "<host_name>" > /etc/hostname
+grep -q '<host_name>' /etc/hosts && sed -i "/<host_name>/c\<ip>\t<host_name>/" /etc/hosts || echo -e '<ip>\t<host_name>' >> /etc/hosts
 
 mkdir /root/.ssh
 touch authorized_keys
