@@ -16,6 +16,7 @@ exit
 
 ssh -i <key_file_path> root@<ip_address>
 # as [root]
+groupadd hadoop
 useradd -g hadoop -m hadoop -s /bin/bash
 passwd hadoop
 mkdir /home/hadoop/.ssh
@@ -34,7 +35,7 @@ ls -la /home/hadoop/.ssh
 chmod 600 /home/hadoop/.ssh/authorized_keys
 ls -la /home/hadoop/.ssh
 ssh-keygen
-cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys"
+cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
 ssh hadoop@localhost
 exit
 exit
