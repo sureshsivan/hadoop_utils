@@ -3,6 +3,7 @@
 ## For any other nodes, same configurations can be copied - rsync-ed
 #########################################################################################
 # Get Configurations
+ssh -i <key_file_path> ubuntu@<namenode_host_name>
 cd $HADOOP_CONF_DIR;
 wget https://s3.amazonaws.com/hadoop_util_files/hadoop_conf/conf.tar.gz;
 chmod +x conf.tar.gz;   \
