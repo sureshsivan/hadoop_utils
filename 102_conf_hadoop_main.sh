@@ -61,3 +61,14 @@ sed -i '/<name>yarn.nodemanager.log-dirs<\/name>/{n;s/.*/\t<value>\/bigdata\/dat
 #   Login as root
 su root
 echo 'master1' > /etc/hostname
+
+
+# DNS for Namenode
+grep -q 'master1' /etc/hosts && sed -i "/master1/c\<ip>\tmaster1/" /etc/hosts || echo -e '<ip>\tmaster1' >> /etc/hosts
+# DNS for secondary namenode
+#grep -q 'master2' /etc/hosts && sed -i "/master2/c\<ip>\tmaster1/" /etc/hosts || echo -e '<ip>\tmaster2' >> /etc/hosts
+# DNS For Datanodes
+#grep -q 'slave1' /etc/hosts && sed -i "/slave1/c\<ip>\tmaster1/" /etc/hosts || echo -e '<ip>\tslave1' >> /etc/hosts
+#grep -q 'slave2' /etc/hosts && sed -i "/slave2/c\<ip>\tmaster1/" /etc/hosts || echo -e '<ip>\tslave2' >> /etc/hosts
+#grep -q 'slave3' /etc/hosts && sed -i "/slave3/c\<ip>\tmaster1/" /etc/hosts || echo -e '<ip>\tslave3' >> /etc/hosts
+
