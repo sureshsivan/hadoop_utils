@@ -12,7 +12,7 @@ chmod -R 744 .
 
 ##!! Ensure that line next to property name is actually value node
 ##!! If there are any comments in between - this command will add will hold duplicate value node
-
+##!! Remove referenced config for fs.checkpoint.edits.dir from core-site.xml
 #SEDing hadoop xml configs
 # core-site.xml
 #   fs.default.name
@@ -21,6 +21,8 @@ sed -i '/fs.default.name/{n;s/.*/\t<value>hdfs:\/\/master1:8020<\/value>/;}' cor
 sed -i '/fs.checkpoint.dir/{n;s/.*/\t<value>\/bigdata\/data\/fs.checkpoint<\/value>/;}' core-site.xml
 #   hadoop.tmp.dir
 sed -i '/hadoop.tmp.dir/{n;s/.*/\t<value>\/bigdata\/data\/hadoop.tmp<\/value>/;}' core-site.xml
+#   fs.checkpoint.edits.dir
+sed -i '/fs.checkpoint.edits.dir/{n;s/.*/\t<value>\/bigdata\/data\/fs.checkpoint<\/value>/;}' core-site.xml
 
 # hdfs-site.xml
 #   dfs.name.dir
