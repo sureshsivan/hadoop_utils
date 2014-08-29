@@ -61,5 +61,5 @@ mkdir -p /bigdata/data/yarn  /bigdata/data/yarn/local-dirs /bigdata/data/yarn/lo
 mkdir -p /bigdata/conf.pseudo  /bigdata/conf.local /bigdata/conf.tmp
 mkdir -p /bigdata/logs/mapred  /bigdata/logs/yarn  /bigdata/logs/hdfs
 mkdir -p /bigdata/pid/mapred  /bigdata/pid/yarn  /bigdata/pid/hadoop
-mkdir -p $HADOOP_LOG_DIR $HDFS_LOG_DIR $YARN_LOG_DIR $MAPRED_LOG_DIR $HADOOP_PID_DIR $YARN_PID_DIR $MAPRED_PID_DIR
+mkdir -p $HADOOP_LOG_DIR $HDFS_LOG_DIR $YARN_LOG_DIR $MAPRED_LOG_DIR $HADOOP_PID_DIR $YARN_PID_DIR $MAPRED_PID_DIR $HADOOP_CONF_DIR
 
