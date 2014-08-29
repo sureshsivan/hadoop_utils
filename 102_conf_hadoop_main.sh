@@ -9,6 +9,8 @@ chmod +x conf.tar.gz;   \
 tar zxvf ./conf.tar.gz -C ./;   \
 rm conf.tar.gz; \
 touch $HADOOP_CONF_DIR/masters; \
+> $HADOOP_CONF_DIR/masters; \
+> $HADOOP_CONF_DIR/slaves; \
 chmod -R 744 .; 
 
 ##!! Ensure that line next to property name is actually value node
