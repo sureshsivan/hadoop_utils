@@ -7,6 +7,8 @@ ssh -i <key_file_path> ubuntu@<ip_address>
 sudo passwd
 su root
 # as [root]
+echo '<machine_name>' > /etc/hostname
+
 mkdir /root/.ssh
 touch authorized_keys
 cat /home/ubuntu/.ssh/authorized_keys > /root/.ssh/authorized_keys
