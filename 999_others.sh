@@ -4,3 +4,5 @@ nano /etc/security/limits.conf
 *	hard	nofile	8192
 
 [2]
+more $HADOOP_CONF_DIR/hdfs-site.xml
+
