@@ -25,7 +25,7 @@ chown -R hadoop:hadoop /bigdata;
 [8]
 exit;
 [9]
-ssh -i <key_file_path> hadoop@<ip_address>:/bigdata;
+ssh -i <key_file_path> hadoop@<ip_address>;
 [10]
 cd /bigdata/apps;\
 ls -la;\
