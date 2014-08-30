@@ -31,3 +31,8 @@ rsync -avz -e "ssh" "$HADOOP_CONF_DIR/" "hadoop@master2:$HADOOP_CONF_DIR/"
 rsync -avz -e "ssh" "$HADOOP_CONF_DIR/" "hadoop@slave1:$HADOOP_CONF_DIR/"
 rsync -avz -e "ssh" "$HADOOP_CONF_DIR/" "hadoop@slave2:$HADOOP_CONF_DIR/"
 rsync -avz -e "ssh" "$HADOOP_CONF_DIR/" "hadoop@slave3:$HADOOP_CONF_DIR/"
+
+
+
+
+............
