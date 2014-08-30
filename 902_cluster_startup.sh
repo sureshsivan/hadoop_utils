@@ -23,3 +23,8 @@ $HADOOP_PREFIX/sbin/yarn-daemon.sh stop resourcemanager
 # Every Data node
 $HADOOP_PREFIX/sbin/hadoop-daemon.sh stop datanode 
 $HADOOP_PREFIX/sbin/yarn-daemon.sh stop nodemanager 
+
+
+
+
+...............
