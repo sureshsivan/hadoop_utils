@@ -25,6 +25,7 @@ $HADOOP_PREFIX/sbin/hadoop-daemon.sh stop datanode
 $HADOOP_PREFIX/sbin/yarn-daemon.sh stop nodemanager 
 
 
-
+[3]
+$HADOOP_PREFIX/bin/hdfs namenode -format
 
 ...............
