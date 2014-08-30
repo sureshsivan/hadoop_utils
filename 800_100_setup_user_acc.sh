@@ -18,7 +18,7 @@ touch authorized_keys;	\
 cat /home/ubuntu/.ssh/authorized_keys > /root/.ssh/authorized_keys;	\
 chmod 600 /root/.ssh/authorized_keys;
 [5]
-exit;
+exit;exit;
 
 [6]
 ssh -i <key_file_path> root@<ip_address>;
