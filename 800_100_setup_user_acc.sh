@@ -35,7 +35,7 @@ cat /home/ubuntu/.ssh/authorized_keys > /home/hadoop/.ssh/authorized_keys;\
 more /home/hadoop/.ssh/authorized_keys;\
 ls -la /home/hadoop/.ssh;\
 chown -R hadoop:hadoop /home/hadoop/.ssh;\
-ls -la /home/hadoop/.ssh;\
+ls -la /home/hadoop/.ssh;
 [10]
 exit;
 
