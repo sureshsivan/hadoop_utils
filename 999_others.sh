@@ -5,6 +5,9 @@ nano /etc/security/limits.conf
 
 [2]
 more $HADOOP_CONF_DIR/hdfs-site.xml
+more $HADOOP_CONF_DIR/yarn-env.sh 
+more $HADOOP_CONF_DIR/hadoop-env.sh 
+more $HADOOP_CONF_DIR/mapred-env.sh 
 
 [3]
 # DFS File System
