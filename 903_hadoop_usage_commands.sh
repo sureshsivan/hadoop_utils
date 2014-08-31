@@ -17,6 +17,11 @@ $HADOOP_PREFIX/bin/hadoop fs -mkdir hdfs://master1:8020/study/hadoopbook/ncdc/al
 
 
 [4]
+$HADOOP_PREFIX/bin/hadoop distcp \
+  -Dfs.s3n.awsAccessKeyId='' \
+  -Dfs.s3n.awsSecretAccessKey='' \
+  s3n://hadoopbook/ncdc/all \
+  hdfs://master1:8020/study/hadoopbook/ncdc/all;
 
 
 $HADOOP_PREFIX/bin/
