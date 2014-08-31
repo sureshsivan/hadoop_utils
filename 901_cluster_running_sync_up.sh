@@ -27,10 +27,10 @@ done;
 
 
 # Sync up hadoop configuration
-rsync -avz -e "ssh" "$HADOOP_CONF_DIR/" "hadoop@master2:$HADOOP_CONF_DIR/"
-rsync -avz -e "ssh" "$HADOOP_CONF_DIR/" "hadoop@slave1:$HADOOP_CONF_DIR/"
-rsync -avz -e "ssh" "$HADOOP_CONF_DIR/" "hadoop@slave2:$HADOOP_CONF_DIR/"
-rsync -avz -e "ssh" "$HADOOP_CONF_DIR/" "hadoop@slave3:$HADOOP_CONF_DIR/"
+rsync -avz --stats -e "ssh" "$HADOOP_CONF_DIR/" "hadoop@master2:$HADOOP_CONF_DIR/"
+rsync -avz --stats -e "ssh" "$HADOOP_CONF_DIR/" "hadoop@slave1:$HADOOP_CONF_DIR/"
+rsync -avz --stats -e "ssh" "$HADOOP_CONF_DIR/" "hadoop@slave2:$HADOOP_CONF_DIR/"
+rsync -avz --stats -e "ssh" "$HADOOP_CONF_DIR/" "hadoop@slave3:$HADOOP_CONF_DIR/"
 
 # From Local
 rsync -avz --stats -e "ssh -i HadoopEcoSystem.pem" "hadoop@master1:/bigdata/conf/hadoop/" "/dev_tools/tools/hadoop/conf/conf.ec2"
