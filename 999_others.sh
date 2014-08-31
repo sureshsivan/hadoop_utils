@@ -29,3 +29,4 @@ http://master2:19888/jobhistory
 http://slave1:50075/dataNodeHome.jsp
 #[IPC]	http://slave1:8010/
 http://slave1:8042/node
+http://master2:8088/cluster
