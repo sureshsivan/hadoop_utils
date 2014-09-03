@@ -2,6 +2,7 @@
 $HADOOP_PREFIX/bin/hdfs dfsadmin -report
 
 [2]
+$HADOOP_PREFIX/bin/hadoop fs -ls
 $HADOOP_PREFIX/bin/hadoop fs -ls /
 $HADOOP_PREFIX/bin/hadoop fs -ls -R /
 $HADOOP_PREFIX/bin/hadoop fs -ls -R hdfs://master1:8020/
