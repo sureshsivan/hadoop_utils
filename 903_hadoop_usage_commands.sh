@@ -1,6 +1,13 @@
 [1]
 $HADOOP_PREFIX/bin/hdfs dfsadmin -report
 $HADOOP_PREFIX/bin/hdfs dfsadmin -metasave filename
+$HADOOP_PREFIX/bin/hdfs dfsadmin -safemode enter
+$HADOOP_PREFIX/bin/hdfs dfsadmin -safemode leave
+$HADOOP_PREFIX/bin/hdfs dfsadmin -safemode get
+$HADOOP_PREFIX/bin/hdfs dfsadmin -safemode wait
+$HADOOP_PREFIX/bin/hdfs dfsadmin -refreshNodes
+
+
 
 [2]
 $HADOOP_PREFIX/bin/hadoop fs -ls
