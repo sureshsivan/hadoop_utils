@@ -1,4 +1,6 @@
 [1]
+
+$HADOOP_PREFIX/bin/hdfs dfsadmin -help
 $HADOOP_PREFIX/bin/hdfs dfsadmin -report
 $HADOOP_PREFIX/bin/hdfs dfsadmin -metasave filename
 $HADOOP_PREFIX/bin/hdfs dfsadmin -safemode enter
@@ -10,6 +12,7 @@ $HADOOP_PREFIX/bin/hdfs dfsadmin -refreshNodes
 
 
 [2]
+$HADOOP_PREFIX/bin/hdfs dfs -help
 $HADOOP_PREFIX/bin/hadoop fs -ls
 $HADOOP_PREFIX/bin/hadoop fs -ls /
 $HADOOP_PREFIX/bin/hadoop fs -ls -R /
@@ -25,6 +28,8 @@ $HADOOP_PREFIX/bin/hadoop fs -mkdir hdfs://master1:8020/study/hadoopbook/ncdc/
 $HADOOP_PREFIX/bin/hadoop fs -mkdir hdfs://master1:8020/study/hadoopbook/ncdc/all
 
 
+
+
 [4]
 $HADOOP_PREFIX/bin/hadoop distcp \
   -Dfs.s3n.awsAccessKeyId='' \
@@ -37,3 +42,13 @@ $HADOOP_PREFIX/bin/
 $HADOOP_PREFIX/bin/
 $HADOOP_PREFIX/bin/
 $HADOOP_PREFIX/bin/
+
+
+
+[5]
+$HADOOP_PREFIX/bin/start-dfs.sh -upgrade
+$HADOOP_PREFIX/bin/hdfs dfsadmin -upgradeProgress status
+$HADOOP_PREFIX/bin/hdfs dfsadmin -upgradeProgress details
+$HADOOP_PREFIX/bin/hdfs dfsadmin -upgradeProgress force
+$HADOOP_PREFIX/bin/start-dfs.sh -rollback
+$HADOOP_PREFIX/bin/start-dfs.sh -finalizeUpgrade
