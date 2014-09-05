@@ -1,5 +1,6 @@
 [1]
 $HADOOP_PREFIX/bin/hdfs dfsadmin -report
+$HADOOP_PREFIX/bin/hdfs dfsadmin -metasave filename
 
 [2]
 $HADOOP_PREFIX/bin/hadoop fs -ls
