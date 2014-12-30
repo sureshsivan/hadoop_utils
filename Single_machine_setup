@@ -1,3 +1,54 @@
+JAVA_HOME=/dev_tools/java_default
+JDK_HOME=$JAVA_HOME
+JRE_HOME=$JAVA_HOME/jre
+
+MAVEN_HOME=/dev_tools/maven_default
+M2_HOME=$MAVEN_HOME
+
+SENCHA_CMD_HOME=/dev_tools/sencha_cmd_default
+
+ANT_HOME=/dev_tools/ant_default
+
+HADOOP_PREFIX=/dev_tools/hadoop_default
+HADOOP_CONF_DIR=/dev_tools/tools/hadoop/conf/conf.pseudo
+HADOOP_LOG_DIR=/dev_tools/tools/hadoop/logs
+HADOOP_CONF_ROOT=/dev_tools/tools/hadoop/conf
+PIG_HOME=/dev_tools/pig_default
+SOLR_HOME=/dev_tools/solr_default
+HIVE_HOME=/dev_tools/hive_default
+
+
+
+export JAVA_HOME
+export JDK_HOME
+export JRE_HOME
+export MAVEN_HOME
+export M2_HOME
+export ANT_HOME
+export PATH
+export SENCHA_CMD_HOME
+export HADOOP_PREFIX
+export HADOOP_CONF_DIR
+export HADOOP_LOG_DIR
+export HADOOP_CONF_ROOT
+export PIG_HOME
+export SOLR_HOME
+export HIVE_HOME
+
+HBASE_HOME=/dev_tools/hbase_default
+export HBASE_HOME
+HBASE_PREFIX=$HBASE_HOME
+export HBASE_PREFIX
+HBASE_CONF_ROOT=/dev_tools/tools/hbase/conf
+export HBASE_CONF_ROOT
+HBASE_CONF_DIR=$HBASE_CONF_ROOT/conf.pseudo.hadoop2
+
+ZOOKEEPER_HOME=/dev_tools/zookeeper_default
+export ZOOKEEPER_HOME
+ZOOKEEPER_PREFIX=$ZOOKEEPER_HOME
+export ZOOKEEPER_PREFIX
+
+
 function starthadoop(){
 	hadoop-daemon.sh --config $HADOOP_CONF_ROOT/conf.pseudo start namenode;
 	hadoop-daemon.sh --config $HADOOP_CONF_ROOT/conf.pseudo start secondarynamenode;
