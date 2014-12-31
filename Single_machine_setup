@@ -90,3 +90,44 @@ function stoph(){
 	stopzoo;
 	stophbase;
 }
+
+
+ln -s /big_data/apps/hadoop/hadoop1 hadoop.default;
+ln -s /big_data/apps/hadoop/hadoop2_4 hadoop.default;
+ln -s /big_data/apps/hadoop/hadoop2_3 hadoop.default;
+
+
+rm /big_data/apps/hadoop/hadoop.default;
+
+
+HADOOP_PREFIX
+HADOOP_HOME
+HADOOP_CONF_DIR
+HADOOP_LOG_DIR
+
+PIG_PREFIX
+PIG_HOME
+PIG_CONF_DIR
+
+
+HIVE_PREFIX
+HIVE_HOME
+HIVE_CONF_DIR
+
+SOLR_PREFIX
+SOLR_HOME
+SOLR_CONF_DIR
+
+HBASE_PREFIX
+HBASE_HOME
+HBASE_CONF_DIR
+
+
+ZOOKEEPER_PREFIX
+ZOOKEEPER_HOME
+ZOOKEEPER_CONF_DIR
+
+SQOOP_PREFIX
+SQOOP_HOME
+SQOOP_CONF_DIR
+
