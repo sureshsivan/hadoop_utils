@@ -334,3 +334,42 @@ yarn-site.xml
   mkdir -p $HADOOP_LOG_DIR/
   mkdir -p $HADOOP_LOG_DIR/
   mkdir -p $HADOOP_LOG_DIR/
+
+
+
+function starthadoop2(){
+	hadoop-daemon.sh start namenode;
+	hadoop-daemon.sh start secondarynamenode;
+	hadoop-daemon.sh start datanode;
+	yarn-daemon.sh start nodemanager;
+	yarn-daemon.sh start resourcemanager;
+	mr-jobhistory-daemon.sh start historyserver;
+}
+function stophadoop2(){
+	hadoop-daemon.sh stop namenode;
+	hadoop-daemon.sh stop secondarynamenode;
+	hadoop-daemon.sh stop datanode;
+	yarn-daemon.sh stop nodemanager;
+	yarn-daemon.sh stop resourcemanager;
+	mr-jobhistory-daemon.sh stop historyserver;
+}
+function starthadoop1(){
+	hadoop-daemon.sh start namenode;
+	hadoop-daemon.sh start secondarynamenode;
+	hadoop-daemon.sh start datanode;
+	hadoop-daemon.sh start jobtracker;
+	hadoop-daemon.sh start tasktracker;
+}
+function stophadoop1(){
+	hadoop-daemon.sh stop namenode;
+	hadoop-daemon.sh stop secondarynamenode;
+	hadoop-daemon.sh stop datanode;
+	hadoop-daemon.sh stop jobtracker;
+	hadoop-daemon.sh stop tasktracker;
+}
+function startzoo(){
+	zkServer.sh start;
+}
+function stopzoo(){
+	zkServer.sh stop;
+}
