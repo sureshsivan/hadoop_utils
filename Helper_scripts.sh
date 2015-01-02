@@ -292,6 +292,11 @@ yarn-site.xml
 
   Envs : 
   ======
+  BIG_DATA_ROOT_DIR=/big_data
+  BIG_DATA_ROOT_LOG_DIR=$BIG_DATA_ROOT_DIR/logs
+  BIG_DATA_ROOT_CONF_DIR=$BIG_DATA_ROOT_DIR/conf
+  BIG_DATA_ROOT_APP_DIR=$BIG_DATA_ROOT_DIR/apps
+  BIG_DATA_ROOT_DATA_DIR=$BIG_DATA_ROOT_DIR/data
   HADOOP_SECURE_DN_LOG_DIR=$HADOOP_LOG_DIR
   HADOOP_PID_DIR=$HADOOP_LOG_DIR
   HADOOP_SECURE_DN_PID_DIR=$HADOOP_LOG_DIR
@@ -300,15 +305,15 @@ yarn-site.xml
   YARN_CONF_DIR=$HADOOP_CONF_DIR
   YARN_LOG_DIR=$HADOOP_LOG_DIR
   YARN_PID_DIR=$HADOOP_LOG_DIR
-  HADOOP_DATA_DIR=/big_data/data/hadoop.default
-  PIG_HOME=/big_data/apps/pig/pig.default
-  PIG_CONF_DIR=/big_data/conf/pig/pig.default
-  PIG_LOG_DIR=/big_data/logs/pig/pig.default
-  HIVE_HOME=/big_data/apps/hive/hive.default
-  HIVE_CONF_DIR=/big_data/conf/hive/hive.default
-  ZOOKEEPER_PREFIX=/big_data/apps/zookeeper/zookeeper.default
-  ZOO_LOG_DIR=/big_data/logs/zookeeper/zookeeper.default
-  ZOOCFGDIR=/big_data/conf/zookeeper/zookeeper.default
+  HADOOP_DATA_DIR=$BIG_DATA_ROOT_DATA_DIR/hadoop.default
+  PIG_HOME=$BIG_DATA_ROOT_APP_DIR/pig/pig.default
+  PIG_CONF_DIR=$BIG_DATA_ROOT_CONF_DIR/pig/pig.default
+  PIG_LOG_DIR=$BIG_DATA_ROOT_LOG_DIR/pig/pig.default
+  HIVE_HOME=$BIG_DATA_ROOT_APP_DIR/hive/hive.default
+  HIVE_CONF_DIR=$BIG_DATA_ROOT_CONF_DIR/hive/hive.default
+  ZOOKEEPER_PREFIX=$BIG_DATA_ROOT_APP_DIR/zookeeper/zookeeper.default
+  ZOO_LOG_DIR=$BIG_DATA_ROOT_LOG_DIR/zookeeper/zookeeper.default
+  ZOOCFGDIR=$BIG_DATA_ROOT_CONF_DIR/zookeeper/zookeeper.default
   
 
 
@@ -336,7 +341,18 @@ yarn-site.xml
   mkdir -p $HADOOP_LOG_DIR/
 
 
-
+function switch_to_pig_(){
+	rm -f /big_data/apps/pig/pig.default;
+	ln -s /big_data/apps/pig/pig_X_Y_Z /big_data/apps/pig/pig.default;
+}
+function switch_to_hive_(){
+	rm -f /big_data/apps/hive/hive.default;
+	ln -s /big_data/apps/hive/hive_X_Y_Z /big_data/apps/hive/hive.default;
+}
+function switch_to_zookeeper_(){
+	rm -f /big_data/apps/zookeeper/zookeeper.default;
+	ln -s /big_data/apps/zookeeper/zookeeper_X_Y_Z /big_data/apps/zookeeper/zookeeper.default;
+}
 function starthadoop2(){
 	hadoop-daemon.sh start namenode;
 	hadoop-daemon.sh start secondarynamenode;
