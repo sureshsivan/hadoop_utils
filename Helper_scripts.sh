@@ -109,13 +109,13 @@ PATH=$PATH:$JDK_HOME/bin:$HADOOP_PREFIX/bin
 
 http://docs.hortonworks.com/HDPDocuments/HDP2/HDP-2.0.0.2/bk_installing_manually_book/content/rpm_chap3.html
 ============================================================================================================
+hadoop.tmp.dir
 fs.default.name
 fs.checkpoint.dir
 dfs.name.dir
 dfs.data.dir
 yarn.nodemanager.local-dirs
 yarn.nodemanager.log-dirs
-
 
 
 Directory Structure
