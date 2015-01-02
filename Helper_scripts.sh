@@ -301,7 +301,15 @@ yarn-site.xml
   YARN_LOG_DIR=$HADOOP_LOG_DIR
   YARN_PID_DIR=$HADOOP_LOG_DIR
   HADOOP_DATA_DIR=/big_data/data/hadoop.default
-
+  PIG_HOME=/big_data/apps/pig/pig.default
+  PIG_CONF_DIR=/big_data/conf/pig/pig.default
+  PIG_LOG_DIR=/big_data/logs/pig/pig.default
+  HIVE_HOME=/big_data/apps/hive/hive.default
+  HIVE_CONF_DIR=/big_data/conf/hive/hive.default
+  ZOOKEEPER_PREFIX=/big_data/apps/zookeeper/zookeeper.default
+  ZOO_LOG_DIR=/big_data/logs/zookeeper/zookeeper.default
+  ZOOCFGDIR=/big_data/conf/zookeeper/zookeeper.default
+  
 
 
 
