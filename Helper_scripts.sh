@@ -105,3 +105,63 @@ function switch_hadoop_2_cluster(){
 
 
 PATH=$PATH:$JDK_HOME/bin:$HADOOP_PREFIX/bin
+
+
+http://docs.hortonworks.com/HDPDocuments/HDP2/HDP-2.0.0.2/bk_installing_manually_book/content/rpm_chap3.html
+============================================================================================================
+fs.default.name
+fs.checkpoint.dir
+dfs.name.dir
+dfs.data.dir
+yarn.nodemanager.local-dirs
+yarn.nodemanager.log-dirs
+
+
+
+Directory Structure
+===================
+.
+├── apps
+│   ├── hadoop
+│   │   ├── hadoop_1_2_1
+│   │   ├── hadoop_2_4_1
+│   │   └── hadoop.default -> /big_data/apps/hadoop/hadoop_2_4_1
+│   └── java
+│       ├── java6
+│       ├── java7
+│       └── java.default -> /big_data/apps/java/java6/
+├── bakup
+│   ├── apache-hive-0.14.0-bin.tar.gz
+│   ├── eclipse-jee-indigo-SR2-linux-gtk-x86_64.tar.gz
+│   ├── pig-0.14.0.tar.gz
+│   ├── solr-4.10.3.zip
+│   ├── sqoop-1.4.5.bin__hadoop-0.20.tar.gz
+│   ├── sqoop-1.4.5.bin__hadoop-0.23.tar.gz
+│   ├── sqoop-1.4.5.bin__hadoop-1.0.0.tar.gz
+│   ├── sqoop-1.4.5.bin__hadoop-2.0.4-alpha.tar.gz
+│   ├── sqoop-1.99.4-bin-hadoop100.tar.gz
+│   ├── sqoop-1.99.4-bin-hadoop200.tar.gz
+│   └── zookeeper-3.4.6.tar.gz
+├── conf
+│   ├── hadoop
+│   │   ├── hadoop.1.cluster
+│   │   ├── hadoop.1.original
+│   │   ├── hadoop.1.pseudo
+│   │   ├── hadoop.2.cluster
+│   │   ├── hadoop.2.original
+│   │   ├── hadoop.2.pseudo
+│   │   └── hadoop.default -> /big_data/conf/hadoop/hadoop.2.pseudo
+│   ├── hive
+│   └── pig
+├── data
+│   ├── hadoop1
+│   └── hadoop2
+└── logs
+    └── hadoop
+        ├── hadoop.1.cluster
+        ├── hadoop.1.pseudo
+        ├── hadoop.2.cluster
+        ├── hadoop.2.pseudo
+        └── hadoop.default -> /big_data/logs/hadoop/hadoop.2.pseudo
+
+
