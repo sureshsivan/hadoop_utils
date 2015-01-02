@@ -165,3 +165,164 @@ Directory Structure
         └── hadoop.default -> /big_data/logs/hadoop/hadoop.2.pseudo
 
 
+
+core-site.xml
+=============
+  <property>
+    <name>fs.default.name</name>
+    <value>hdfs://localhost:8020</value>
+    <description>The name of the default file system.  Either the  literal string "local" or a host:port for NDFS.</description>
+    <final>true</final>
+  </property>
+     <property>
+         <name>hadoop.tmp.dir</name>
+         <value>/big_data/logs/hadoop/hadoop.default/hadoop.tmp</value>
+			<final>true</final>
+     </property>
+  <property>
+    <name>fs.checkpoint.dir</name>
+    <value>/big_data/data/hadoop/hadoop.default/fs.checkpoint</value>
+    <description>Determines where on the local filesystem the DFS secondary
+        name node should store the temporary images to merge.
+        If this is a comma-delimited list of directories then the image is
+        replicated in all of the directories for redundancy.
+    </description>
+  </property>
+
+    <property>
+    <name>fs.checkpoint.edits.dir</name>
+    <value>${fs.checkpoint.dir}</value>
+    <description>Determines where on the local filesystem the DFS secondary
+        name node should store the temporary edits to merge.
+        If this is a comma-delimited list of directoires then teh edits is
+        replicated in all of the directoires for redundancy.
+        Default value is same as fs.checkpoint.dir
+    </description>
+  </property>
+
+
+hdfs-site.xml
+=============
+  <property>
+    <name>dfs.name.dir</name>
+		<value>/big_data/data/hadoop/hadoop.default/dfs.name</value>
+    <description>Determines where on the local filesystem the DFS name node
+      should store the name table.  If this is a comma-delimited list
+      of directories then the name table is replicated in all of the
+      directories, for redundancy. </description>
+    <final>true</final>
+  </property>
+
+  <property>
+    <name>dfs.support.append</name>
+    <value>true</value>
+    <description>to enable dfs append</description>
+    <final>true</final>
+  </property>
+
+  <property>
+    <name>dfs.webhdfs.enabled</name>
+    <value>true</value>
+    <description>to enable webhdfs</description>
+    <final>true</final>
+  </property>
+
+  <property>
+    <name>dfs.data.dir</name>
+		<value>/big_data/data/hadoop/hadoop.default/dfs.data</value>
+    <description>Determines where on the local filesystem an DFS data node
+  		should store its blocks.  If this is a comma-delimited
+  		list of directories, then data will be stored in all named
+  		directories, typically on different devices.
+  		Directories that do not exist are ignored.
+  	</description>
+  	<final>true</final>
+  </property>
+
+
+
+mapred-site.xml
+===============
+  <property>
+    <name>mapreduce.framework.name</name>
+    <value>yarn</value>
+  </property>
+  <property>
+   <name>yarn.app.mapreduce.am.staging-dir</name>
+   <value>/big_data/logs/hadoop/hadoop.default/yarn.app.mr.am.staging</value>
+  </property>
+  <property>
+    <name>mapreduce.cluster.local.dir</name>
+    <value>/big_data/logs/hadoop/hadoop.default/mapreduce.cluster.local</value>
+    <description>No description</description>
+    <final>true</final>
+  </property>
+  <property>
+   <name>mapreduce.jobhistory.intermediate-done-dir</name>
+   <value>/big_data/logs/hadoop/hadoop.default/mapreduce.jobhistory.intermediate-done-dir</value>
+  </property>
+  <property>
+   <name>mapreduce.jobhistory.done-dir</name>
+   <value>/big_data/logs/hadoop/hadoop.default/mapreduce.jobhistory.done-dir</value>
+  </property>
+
+
+yarn-site.xml
+==============
+  <property>
+    <name>yarn.nodemanager.local-dirs</name>
+    <value>/big_data/logs/hadoop/hadoop.default/yarn.nodemanager.local</value>
+  </property>
+<property>
+    <name>yarn.nodemanager.log-dirs</name>
+    <value>/big_data/logs/hadoop/hadoop.default/yarn.nodemanager.log-</value>
+  </property>
+  <property>
+    <name>yarn.nodemanager.remote-app-log-dir</name>
+    <value>/big_data/logs/hadoop/hadoop.default/yarn.nodemanager.remote-app-log</value>
+  </property>
+
+  <property>
+    <name>yarn.nodemanager.remote-app-log-dir-suffix</name>
+    <value>remoteapplog</value>
+  </property>
+
+
+
+
+  Envs : 
+  ======
+  HADOOP_SECURE_DN_LOG_DIR=$HADOOP_LOG_DIR
+  HADOOP_PID_DIR=$HADOOP_LOG_DIR
+  HADOOP_SECURE_DN_PID_DIR=$HADOOP_LOG_DIR
+  HADOOP_OPTS="-Djava.net.preferIPv4Stack=true ${HADOOP_OPTS}"
+  HADOOP_LIBEXEC_DIR=${HADOOP_HOME}/lib/hadoop/libexec
+  YARN_CONF_DIR=$HADOOP_CONF_DIR
+  YARN_LOG_DIR=$HADOOP_LOG_DIR
+  YARN_PID_DIR=$HADOOP_LOG_DIR
+  HADOOP_DATA_DIR=/big_data/data/hadoop.default
+
+
+
+
+  Commands : 
+  =========
+  mkdir -p $HADOOP_DATA_DIR/fs.checkpoint
+  mkdir -p $HADOOP_DATA_DIR/dfs.name
+  mkdir -p $HADOOP_DATA_DIR/dfs.data
+
+  mkdir -p $HADOOP_LOG_DIR/yarn.app.mr.am.staging
+  mkdir -p $HADOOP_LOG_DIR/mapreduce.cluster.local
+  mkdir -p $HADOOP_LOG_DIR/mapreduce.jobhistory.intermediate-done-dir
+  mkdir -p $HADOOP_LOG_DIR/mapreduce.jobhistory.done-dir
+  mkdir -p $HADOOP_LOG_DIR/yarn.nodemanager.local
+  mkdir -p $HADOOP_LOG_DIR/yarn.nodemanager.log
+  mkdir -p $HADOOP_LOG_DIR/yarn.nodemanager.remote-app-log
+  mkdir -p $HADOOP_LOG_DIR/hadoop.tmp
+  mkdir -p $HADOOP_LOG_DIR/
+  mkdir -p $HADOOP_LOG_DIR/
+  mkdir -p $HADOOP_LOG_DIR/
+  mkdir -p $HADOOP_LOG_DIR/
+  mkdir -p $HADOOP_LOG_DIR/
+  mkdir -p $HADOOP_LOG_DIR/
+  mkdir -p $HADOOP_LOG_DIR/
